@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Teste Desbravadora</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    <!-- Custom styles for this template -->
+    <link href="offcanvas.css" rel="stylesheet">
+
+  </head>
+
+  <body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+      <a class="navbar-brand mr-auto mr-lg-0" href="#">Teste Desbravadora</a>
+      <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+        <!-- <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Dashboard <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Notifications</a>
+          </li>
+        </ul> -->
+
+        <form class="form-inline my-2 my-lg-0 ml-auto">
+          <input class="form-control mr-sm-2" id="input_busca" type="text" placeholder="Usuário" aria-label="Usuário">
+          <button class="btn btn-outline-success my-2 my-sm-0" id="btn_busca" type="submit">Buscar</button>
+        </form>
+
+      </div>
+    </nav>
+
+    <main role="main" class="container">
+      
+      <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-purple rounded shadow-sm">
+        <img class="mr-3" id="user_avatar" src="" alt="" width="48" height="48">
+        <div class="lh-100">
+          <h6 class="mb-0 text-white lh-100" id="user_name"></h6>
+          <small id="user_login"></small>
+        </div>
+      </div>
+
+      <div class="my-3 p-3 bg-white rounded shadow-sm">
+        <h6 class="border-bottom border-gray pb-2 mb-0">Dados do usuário</h6>
+
+        <div class="media text-muted pt-3">
+          <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+            <div class="d-flex justify-content-between align-items-center w-100">
+              <strong class="text-gray-dark">Número de seguidores: </strong>
+              <p id="user_followers"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="media text-muted pt-3">
+          <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+            <div class="d-flex justify-content-between align-items-center w-100">
+              <strong class="text-gray-dark">Número de seguidos: </strong>
+              <p id="user_follow"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="media text-muted pt-3">
+          <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+            <div class="d-flex justify-content-between align-items-center w-100">
+              <strong class="text-gray-dark">E-mail: </strong>
+              <p id="user_email"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="media text-muted pt-3">
+          <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+            <div class="d-flex justify-content-between align-items-center w-100">
+              <strong class="text-gray-dark">Bio: </strong>
+              <p id="user_bio"></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="my-3 p-3 bg-white rounded shadow-sm">
+        <h6 class="border-bottom border-gray pb-2 mb-0">Repositórios</h6>
+
+        <!-- <div class="media text-muted pt-3">
+          <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect fill="#007bff" width="100%" height="100%"/><text fill="#007bff" dy=".3em" x="50%" y="50%">32x32</text></svg>
+          <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+            <div class="d-flex justify-content-between align-items-center w-100">
+              <strong class="text-gray-dark">Full Name</strong>
+              <a href="#">Follow</a>
+            </div>
+            <span class="d-block">@username</span>
+          </div>
+        </div> -->
+
+        <table class="table table-hover">
+          <!-- <thead class="thead-light">
+            <tr>
+              <th>Nome do arquivo</th>
+              <th>Relatório</th>
+            </tr>
+          </thead> -->
+          <tbody id="repos_table">
+            <tr class="text-muted text-gray-dark small d-flex justify-content-between align-items-center">
+              <!-- <td>
+                  <strong>teste</strong>
+              </td>
+              <td>
+                <a class="btn-sm btn-info" href="#" target="_blank" role="button">Gerar</a>
+              </td> -->
+            </tr> 
+          </tbody>
+        </table>
+
+      </div>
+    </main>
+
+  <script src="offcanvas.js"></script>
+
+  <script>
+
+    $('#btn_busca').click(function(){
+      let user_busca = $('#input_busca').val();
+      
+      const url_user = 'https://api.github.com/users/'+user_busca;
+      fetch(url_user)
+      .then((resp) => resp.json())
+      .then(function(data) {
+        let user = data;
+        console.log(user);
+        $('#user_name').text(user.name);
+        $('#p_user_name').text(user.name);
+        $('#user_login').text(user.login);
+        $('#user_avatar').attr('src',user.avatar_url);
+        $('#user_followers').text(user.followers);
+        $('#user_follow').text(user.following);
+        $('#user_email').text(user.email);
+        $('#user_bio').text(user.bio);
+      })
+      .catch(function(error) {
+        console.log(JSON.stringify(error));
+      });
+
+      const url_user_repos = 'https://api.github.com/users/'+user_busca+'/repos?sort=stargazers_count&sort=desc';
+      fetch(url_user_repos)
+      .then((resp) => resp.json())
+      .then(function(data) {
+        let user_repos = data;
+        console.log(user_repos);
+        $.each(user_repos, function(i, item) {
+          console.log(item);
+        var $tr = $('<tr>').append(
+            $('<td>').text(item.name),
+            $('</td>'),
+            $('<td>').text(item.url),
+            $('</td>')
+        ).appendTo('#repos_table');
+        console.log($tr.wrap('<p>').html());
+    });
+      })
+      .catch(function(error) {
+        console.log(JSON.stringify(error));
+      });
+    })
+
+  
+
+  </script>
+</body>
+</html>
